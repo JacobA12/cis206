@@ -99,6 +99,9 @@ public class Main {
                     elevation,
                     String.format("%.3f", meterElevation));
         }
+        for (int i = 0; i < 83; i++) {
+            System.out.print("=");
+        }
         System.out.println();
         minElevation(mountains);
     }
