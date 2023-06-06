@@ -1,3 +1,4 @@
+
 /*
  File: Main.java, MountainData.java
  Description: This program creates mountain objects and outputs data the correlated with these objects.
@@ -13,7 +14,8 @@ public class Main {
         double minElevation = data.get(0).getElevation();
         String name = data.get(0).getName();
         String country = data.get(0).getCountry();
-        //enhanced for loop to iterate over data structure and update variables based on the if statement
+        // enhanced for loop to iterate over data structure and update variables based
+        // on the if statement
         for (MountainData datum : data) {
             if (minElevation > datum.getElevation()) {
                 minElevation = datum.getElevation();
@@ -21,14 +23,14 @@ public class Main {
                 country = datum.getCountry();
             }
         }
-            System.out.println("Mountain with the lowest elevation...");
-            System.out.println("Name: " + name);
-            System.out.println("Country: " + country);
-            System.out.println("Elevation: " + minElevation);
+        System.out.println("Mountain with the lowest elevation...");
+        System.out.println("Name: " + name);
+        System.out.println("Country: " + country);
+        System.out.println("Elevation: " + minElevation);
     }
 
     public static void main(String[] args) {
-        //create objects
+        // create objects
         MountainData oneMountain = new MountainData();
         MountainData twoMountain = new MountainData();
         MountainData threeMountain = new MountainData();
@@ -37,7 +39,7 @@ public class Main {
         MountainData sixMountain = new MountainData();
         MountainData sevenMountain = new MountainData();
 
-        //set object data using dot operator and setter/getter functions
+        // set object data using dot operator and setter/getter functions
         oneMountain.setName("Chimborazo");
         oneMountain.setCountry("Ecuador");
         oneMountain.setElevation(20549);
@@ -66,7 +68,8 @@ public class Main {
         sevenMountain.setCountry("Switzerland");
         sevenMountain.setElevation(9719);
 
-        //add data to an arraylist - could have used a hashmap as well, but for this scale arraylist works good
+        // add data to an arraylist - could have used a hashmap as well, but for this
+        // scale arraylist works good
         ArrayList<MountainData> mountains = new ArrayList<MountainData>();
         mountains.add(oneMountain);
         mountains.add(twoMountain);
@@ -75,14 +78,13 @@ public class Main {
         mountains.add(fiveMountain);
         mountains.add(sixMountain);
         mountains.add(sevenMountain);
-        //format output
+        // format output
         System.out.printf(
                 "| %27s | %18s | %9s | %16s |\n",
                 "Name",
                 "Country",
                 "Elevation",
-                "Meter Elevation"
-        );
+                "Meter Elevation");
         for (int i = 0; i < 83; i++) {
             System.out.print("=");
         }
@@ -95,8 +97,7 @@ public class Main {
                     mountainData.getName(),
                     mountainData.getCountry(),
                     elevation,
-                    String.format("%.3f", meterElevation)
-            );
+                    String.format("%.3f", meterElevation));
         }
         System.out.println();
         minElevation(mountains);
